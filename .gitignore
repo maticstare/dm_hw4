@@ -1,0 +1,7 @@
+# Ignore everything
+*
+# Except these files
+!.gitignore
+!report.pdf
+!report.tex
+!hw04_dm_2324.pdf
