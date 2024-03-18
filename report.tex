@@ -41,11 +41,23 @@
 \newpage
 
 % Sections
-\section{Theorem 2}\label{sec:p1}
+\section{Proof of theorem 2}\label{sec:p1}
 
 \begin{enumerate}[label*=\alph*)]
-    \item neki
-    \item neki
+    \item 
+    \begin{itemize}
+        \item $B(G)$ is a block forest of $G$.
+        \item $l$ represents the number of leaves in $B(G)$.
+        \item $d$ is the maximal degree of a c-vertex in $G$.
+        \item $h$ is the number of connected components in $G$.
+        \item $q$ is the number of isolated vertices in $B(G)$.
+    \end{itemize}
+    We would like to show, that there exists a set of edges F of cardinality $|F| = max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$ so that $G + F$ is 2-connected. We will not provide the full proof, but just try to find a single edge that will reduce the expression $max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$ preferably so that $h$ and $q$ will drop by 1.
+
+    
+
+    \item  
+        $max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$
 \end{enumerate}
 
 \end{document}
