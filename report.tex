@@ -18,7 +18,7 @@
 \usepackage{tikz}
 
 % Page layout
-\geometry{top=1in, bottom=1in, left=1in, right=1in}
+\geometry{top=1in, bottom=1in, left=2in, right=2in}
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Matic Stare}
@@ -37,27 +37,29 @@
 \maketitle
 
 % Table of Contents
-\tableofcontents
-\newpage
+%\tableofcontents
+%\newpage
 
 % Sections
-\section{Proof of theorem 2}\label{sec:p1}
+\section*{Proof of theorem 2}\label{sec:p1}
 
 \begin{enumerate}[label*=\alph*)]
     \item 
     \begin{itemize}
         \item $B(G)$ is a block forest of $G$.
         \item $l$ represents the number of leaves in $B(G)$.
-        \item $d$ is the maximal degree of a c-vertex in $G$.
+        \item $d$ is the maximal degree of a cut vertex in $G$.
         \item $h$ is the number of connected components in $G$.
         \item $q$ is the number of isolated vertices in $B(G)$.
     \end{itemize}
-    We would like to show, that there exists a set of edges F of cardinality $|F| = max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$ so that $G + F$ is 2-connected. We will not provide the full proof, but just try to find a single edge that will reduce the expression $max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$ preferably so that $h$ and $q$ will drop by 1.
+    We would like to show, that there exists a set of edges F of cardinality $|F| = max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$ so that $G + F$ is 2-connected. We will start by adding a single edge that will reduce the expression $max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$ preferably so that $h$ and $q$ will drop by 1.
 
+    The idea is to first connect all the isolated vertices to the leaves of $B(G)$, so that $q$ and $h$ will drop by 1. There is a special case where there are no leaves and we have to connect 2 isolated vertices. In this case the number of leaves $l$ increases by 2, the number of isolated vertices $q$ drops by 2, the number of connected components $h$ drops by 1 and the maximal degree of a cut vertex $d$ is at least 2. After this we are left with no isolated vertices and one or more connected components. We connect 2 arbitrary components through one of their leaves. This leaves us with $h - 1$ connected components and $l - 2$ leaves. We repeat this process until we are left with 1 connected component. After that we are left with no isolated vertices and 1 connected component. We can now apply the algorithm from Theorem 1.
     
-
     \item  
-        $max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$
+    The idea of the b part of this proof is that when constructing 2-connected graph from isolated vertices and multiple connected components, we on each step reduce the expression $max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$ by 1. If that is the case then we did not include any reduntant edges and by doing that we have constructed a 2-connected graph with the minimal number of edges. As we have shown in the previous part, we can always reduce the expression by 1. Therefore the number of edges in the minimal 2-connected graph is $max \{d + h - 2, \lceil \frac{l}{2} \rceil + q \}$.
+
+
 \end{enumerate}
 
 \end{document}
